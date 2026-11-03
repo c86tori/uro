@@ -2,6 +2,7 @@ name: Publish Uropedia
 on:
   push:
     branches: [main]
+    paths: ['site-part-07.zip', '.github/workflows/pages.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -22,12 +23,14 @@ jobs:
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          import zipfile
+          import zipfile, hashlib
           target = Path('_site').resolve()
           target.mkdir()
           archives = sorted(Path('.').glob('site-part-*.zip'))
-          if not archives:
-              raise SystemExit('No site archives')
+          expected = ["c80549e950d6cedd25372fe4b393c775940be21dd93fb425827d0794d3d46a90","b95d504231bda297af66d84b2f1a650f8386839f1adc7fc4a23900b1ff46c72f","992e29d5f135fbbbe25688aa29b5f5058c37d04b51142439fb5a2455531a1eaa","8030941f63e8bb7260acd677e441a09d511960dfb3fd1881a7030c0660d26144","e050b4186232a494bf9b7ff3bdf1d15178e0df8e8596aeb8382eef3f6055d601","f0a55b113ed9c62d63d9d0e25f7fd7fa8099bf27fe58ad030c2da1a73ac37aa8","c47a4ffa74d18a205f9436cbe1e698cd9b8f1fed6958e4109e03f23522650017"]
+          assert len(archives) == 7, 'All seven public packages are required'
+          for archive, digest in zip(archives, expected):
+              assert hashlib.sha256(archive.read_bytes()).hexdigest() == digest, archive.name
           for archive in archives:
               with zipfile.ZipFile(archive) as z:
                   for entry in z.infolist():
@@ -36,6 +39,8 @@ jobs:
                           raise SystemExit('Unsafe archive path')
                   z.extractall(target)
           assert (target / 'index.html').is_file()
+          assert len(list(target.rglob('*.html'))) == 849
+          assert len([p for p in target.rglob('*') if p.is_file()]) == 934
           PY
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
