@@ -2,7 +2,7 @@ name: Publish Uropedia
 on:
   push:
     branches: [main]
-    paths: ['site-part-07.zip', '.github/workflows/pages.yml']
+    paths: ['site-part-07.zip', 'brand-overlay-v1.zip', '.github/workflows/pages.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -38,9 +38,15 @@ jobs:
                       if not dest.is_relative_to(target):
                           raise SystemExit('Unsafe archive path')
                   z.extractall(target)
+          overlay = Path('brand-overlay-v1.zip')
+          assert hashlib.sha256(overlay.read_bytes()).hexdigest() == '64a3bae282c837d47a26f672a3d452e2243419d396785e1113eaa898335227d3'
+          with zipfile.ZipFile(overlay) as z:
+              for entry in z.infolist():
+                  assert (target / entry.filename).resolve().is_relative_to(target)
+              z.extractall(target)
           assert (target / 'index.html').is_file()
           assert len(list(target.rglob('*.html'))) == 849
-          assert len([p for p in target.rglob('*') if p.is_file()]) == 934
+          assert len([p for p in target.rglob('*') if p.is_file()]) == 941
           PY
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
