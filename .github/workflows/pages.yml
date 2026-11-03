@@ -2,7 +2,7 @@ name: Publish Uropedia
 on:
   push:
     branches: [main]
-    paths: ['site-part-07.zip', 'brand-overlay-v1.zip', '.github/workflows/pages.yml']
+    paths: ['site-part-07.zip', 'brand-overlay-v1.zip', 'brand-layout-v2.css', '.github/workflows/pages.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -44,6 +44,7 @@ jobs:
               for entry in z.infolist():
                   assert (target / entry.filename).resolve().is_relative_to(target)
               z.extractall(target)
+          (target / 'assets/brand-v1.css').write_bytes(Path('brand-layout-v2.css').read_bytes())
           assert (target / 'index.html').is_file()
           assert len(list(target.rglob('*.html'))) == 849
           assert len([p for p in target.rglob('*') if p.is_file()]) == 941
