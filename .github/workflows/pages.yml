@@ -45,6 +45,8 @@ jobs:
                   assert (target / entry.filename).resolve().is_relative_to(target)
               z.extractall(target)
           (target / 'assets/brand-v1.css').write_bytes(Path('brand-layout-v2.css').read_bytes())
+          for page in target.rglob('*.html'):
+              page.write_text(page.read_text().replace('brand-v1.css"', 'brand-v1.css?v=2"'))
           assert (target / 'index.html').is_file()
           assert len(list(target.rglob('*.html'))) == 849
           assert len([p for p in target.rglob('*') if p.is_file()]) == 941
