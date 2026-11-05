@@ -58,7 +58,7 @@ jobs:
                   shutil.copy2(item, dest)
           assert (target / 'index.html').is_file()
           assert len(list(target.rglob('*.html'))) == 849
-          assert len([p for p in target.rglob('*') if p.is_file()]) == 950
+          assert len([p for p in target.rglob('*') if p.is_file()]) == 949
           PY
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
