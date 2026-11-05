@@ -2,7 +2,7 @@ name: Publish Uropedia
 on:
   push:
     branches: [main]
-    paths: ['site-part-07.zip', 'brand-overlay-v1.zip', 'brand-layout-v2.css', '.github/workflows/pages.yml']
+    paths: ['site-part-07.zip', 'brand-overlay-v1.zip', 'brand-layout-v2.css', 'recorded-songs-v1/**', '.github/workflows/pages.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -47,9 +47,18 @@ jobs:
           (target / 'assets/brand-v1.css').write_bytes(Path('brand-layout-v2.css').read_bytes())
           for page in target.rglob('*.html'):
               page.write_text(page.read_text().replace('brand-v1.css"', 'brand-v1.css?v=2"'))
+          import shutil
+          updates = Path('recorded-songs-v1')
+          assert len(list(updates.rglob('*.html'))) == 6
+          for item in updates.rglob('*'):
+              if item.is_file():
+                  dest = target / item.relative_to(updates)
+                  assert dest.resolve().is_relative_to(target)
+                  dest.parent.mkdir(parents=True, exist_ok=True)
+                  shutil.copy2(item, dest)
           assert (target / 'index.html').is_file()
           assert len(list(target.rglob('*.html'))) == 849
-          assert len([p for p in target.rglob('*') if p.is_file()]) == 941
+          assert len([p for p in target.rglob('*') if p.is_file()]) == 948
           PY
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
