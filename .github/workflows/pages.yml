@@ -49,7 +49,7 @@ jobs:
               page.write_text(page.read_text().replace('brand-v1.css"', 'brand-v1.css?v=2"'))
           import shutil
           updates = Path('recorded-songs-v1')
-          assert len(list(updates.rglob('*.html'))) == 7
+          assert len(list(updates.rglob('*.html'))) == 8
           for item in updates.rglob('*'):
               if item.is_file():
                   dest = target / item.relative_to(updates)
@@ -58,7 +58,7 @@ jobs:
                   shutil.copy2(item, dest)
           assert (target / 'index.html').is_file()
           assert len(list(target.rglob('*.html'))) == 849
-          assert len([p for p in target.rglob('*') if p.is_file()]) == 949
+          assert len([p for p in target.rglob('*') if p.is_file()]) == 950
           PY
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
