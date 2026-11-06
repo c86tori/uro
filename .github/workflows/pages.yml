@@ -63,6 +63,12 @@ jobs:
           if link not in html:
               assert html.count(heading) == 1, 'Expected one Umami racing section'
               profile.write_text(html.replace(heading, heading + link, 1), encoding='utf-8')
+          html = profile.read_text(encoding='utf-8')
+          x_link = '<p><a href="https://x.com/umami_0804">Xで競馬予想を見る</a></p>'
+          note = '<p>noteでは、馬や騎手の歩み、血統、再戦の背景を取り上げ、週末のレースにつながる競馬の読み物を書いている。</p><p><a href="https://note.com/umami_0804">noteで競馬の読み物を読む</a></p>'
+          if note not in html:
+              assert html.count(x_link) == 1, 'Expected one Umami X link'
+              profile.write_text(html.replace(x_link, x_link + note, 1), encoding='utf-8')
           assert (target / 'index.html').is_file()
           assert len(list(target.rglob('*.html'))) == 849
           assert len([p for p in target.rglob('*') if p.is_file()]) == 950
