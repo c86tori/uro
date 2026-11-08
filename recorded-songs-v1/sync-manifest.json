@@ -1,0 +1,108 @@
+{
+  "schema": "uropedia-live-sync-v1",
+  "songs": [
+    {
+      "songId": "hanamiya-ramune-song-024",
+      "youtubeUrl": "https://www.youtube.com/watch?v=CDCWH2bNHEw",
+      "page": "songs/hanamiya-ramune-song-024.html",
+      "asset": "assets/singles/hanamiya-ramune-song-024-v1.png",
+      "visibility": "public",
+      "scheduledAt": null
+    },
+    {
+      "songId": "aurora-circular-song-022",
+      "youtubeUrl": "https://www.youtube.com/watch?v=fBoy5AuUhlo",
+      "page": "songs/aurora-circular-song-022.html",
+      "asset": "assets/singles/aurora-circular-song-022-v1.png",
+      "visibility": "public",
+      "scheduledAt": null
+    },
+    {
+      "songId": "takanashi-picco-song-013",
+      "youtubeUrl": "https://www.youtube.com/watch?v=rFdPshf6BL8",
+      "page": "songs/takanashi-picco-song-013.html",
+      "asset": "assets/singles/takanashi-picco-song-013-v1.png",
+      "visibility": "public",
+      "scheduledAt": null
+    },
+    {
+      "songId": "mikage-shizuku-song-039",
+      "youtubeUrl": "https://www.youtube.com/watch?v=R9QqE57cHYc",
+      "page": "songs/mikage-shizuku-song-039.html",
+      "asset": "assets/singles/mikage-shizuku-song-039-v1.png",
+      "visibility": "public",
+      "scheduledAt": null
+    },
+    {
+      "songId": "triangle-club-song-007",
+      "youtubeUrl": "https://www.youtube.com/watch?v=RYM0SsbdQaU",
+      "page": "songs/triangle-club-song-007.html",
+      "asset": "assets/singles/triangle-club-song-007-v1.png",
+      "visibility": "private",
+      "scheduledAt": "2026-11-17T00:58:00+09:00"
+    },
+    {
+      "songId": "yoimachi-shoko-song-005",
+      "youtubeUrl": "https://www.youtube.com/watch?v=ep3nAM0wo88",
+      "page": "songs/yoimachi-shoko-song-005.html",
+      "asset": "assets/singles/yoimachi-shoko-song-005-v1.png",
+      "visibility": "private",
+      "scheduledAt": "2026-11-19T00:23:00+09:00"
+    },
+    {
+      "songId": "mikage-shizuku-song-013",
+      "youtubeUrl": "https://www.youtube.com/watch?v=-uGKAQ9Q1do",
+      "page": "songs/mikage-shizuku-song-013.html",
+      "asset": "assets/singles/mikage-shizuku-song-013-v1.png",
+      "visibility": "private",
+      "scheduledAt": "2026-11-25T01:01:00+09:00"
+    },
+    {
+      "songId": "peacock-hotel-song-011",
+      "youtubeUrl": "https://www.youtube.com/watch?v=y6gw2u4phwY",
+      "page": "songs/peacock-hotel-song-011.html",
+      "asset": "assets/singles/peacock-hotel-song-011-v1.png",
+      "visibility": "public",
+      "scheduledAt": null
+    },
+    {
+      "songId": "dengeki-madeleine-song-023",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Z6FSRqZdkLU",
+      "page": "songs/dengeki-madeleine-song-023.html",
+      "asset": "assets/singles/dengeki-madeleine-song-023-v1.png",
+      "visibility": "private",
+      "scheduledAt": "2026-12-01T00:26:00+09:00"
+    },
+    {
+      "songId": "yogisha-shinobu-song-015",
+      "youtubeUrl": "https://www.youtube.com/watch?v=--lJ4jlMl3Y",
+      "page": "songs/yogisha-shinobu-song-015.html",
+      "asset": "assets/singles/yogisha-shinobu-song-015-v1.png",
+      "visibility": "private",
+      "scheduledAt": "2026-12-03T00:28:00+09:00"
+    }
+  ],
+  "files": {
+    "songs/hanamiya-ramune-song-024.html": "99e83206a25315d5deddcbefd74a34d1e05433ff998cf8c5c6d853925705449b",
+    "assets/singles/hanamiya-ramune-song-024-v1.png": "03905a93efd542e3283209f77400a53a0bd9baf674ad222932c3c21533fc2da7",
+    "songs/aurora-circular-song-022.html": "8fd223f78fe4b0debf1eb1525f00a5044989b4ecd3bc93f1377fec777213d845",
+    "assets/singles/aurora-circular-song-022-v1.png": "636a21f1e02376f14bd5cdc2e1847ea9004df7b057ec766a038ab80eec174cbe",
+    "songs/takanashi-picco-song-013.html": "fb75fe512589d79326fc4c8fe461a7a55f32502890a6cf98aa57af5a03242cb3",
+    "assets/singles/takanashi-picco-song-013-v1.png": "7c365c56d3597e9bc1931de16cd93e5685963255952ee19971725c4713c1bf3a",
+    "songs/mikage-shizuku-song-039.html": "6495830dadd6b6d0282b6f6d4bbf0b9ada8a3e1ee57aa1dd1b0054f031cf3b22",
+    "assets/singles/mikage-shizuku-song-039-v1.png": "35132aef5cb529d1cc5225744c5de313b3cc4fdc159053709b8e7b49c204cf96",
+    "songs/triangle-club-song-007.html": "f5397394b41c81924f69002d754123fcf417ab2cb72e15c3c90a3c7cb6824f3b",
+    "assets/singles/triangle-club-song-007-v1.png": "610d725722bba673c1491376428d05223fd292ead6768a871b6841eec3c545d2",
+    "songs/yoimachi-shoko-song-005.html": "10e31d20f0be3ac9c1d91bf4670e4e660472c68c4ab478aa4822c2f366f1812a",
+    "assets/singles/yoimachi-shoko-song-005-v1.png": "d2d7d786ddde8047b304db7d1667b769fe4ad8c47fab0325730749d57962a7ef",
+    "songs/mikage-shizuku-song-013.html": "5ac58f7687f322712acb5afa927bad1bc08b9dc94f320ad713471b993d7ecc1c",
+    "assets/singles/mikage-shizuku-song-013-v1.png": "a63434512b7be2f43a30998727ad0354d310c26fe9b4ba3213cdba2ca68a3730",
+    "songs/peacock-hotel-song-011.html": "7e3ff6eb92df39ae61a1e6203f55177ab9121ba33a59d99cec884f1aae3bd60b",
+    "assets/singles/peacock-hotel-song-011-v1.png": "7ece95ce86c104a1e4fca224188e689cc30df6d041d84ed32acefbde3635e8ef",
+    "songs/dengeki-madeleine-song-023.html": "5e14c6a668abebc5aa9330a61f709954f2ada56b97226921233a79dd78d71283",
+    "assets/singles/dengeki-madeleine-song-023-v1.png": "47e0dd96715b3fe0b3cc97b131bd007cc17a93884908e1af134e362f18d66348",
+    "songs/yogisha-shinobu-song-015.html": "b567fcb60bc92262e0cf18bf11ebb90980ffa771471811344fbc4bf7636d2746",
+    "assets/singles/yogisha-shinobu-song-015-v1.png": "fba8bca1e661412a6ba40431bde57e2b8c49cbcea5fdae3eba4f1b28fe5b4c8a",
+    "assets/recorded-songs-v1.css": "86040f41eecd120d9b30542c3fbd1ddb77cb49ad04db60aef3768959341e98ea"
+  }
+}
