@@ -8,10 +8,21 @@
       "coverSize": 1024,
       "coverRevision": 1,
       "watchLink": "after-publication"
+    },
+    {
+      "songId": "takanashi-picco-song-023",
+      "page": "songs/takanashi-picco-song-023.html",
+      "asset": "assets/singles/takanashi-picco-song-023-v1.png",
+      "coverSize": 1024,
+      "coverRevision": 1,
+      "watchLink": "after-publication"
     }
   ],
   "files": {
     "songs/honey-pot-song-004.html": "9a519f16d16096887b180bfc1b74d380c707deda6bd2b26fd34c32831ddec0a8",
-    "assets/singles/honey-pot-song-004-v1.png": "1755e346edd2a1b438607473c8c65166e894e3ca1527401cc29681895175a1e7"
+    "assets/singles/honey-pot-song-004-v1.png": "1755e346edd2a1b438607473c8c65166e894e3ca1527401cc29681895175a1e7",
+    "songs/takanashi-picco-song-023.html": "4ca0905e7c0fe19b015373dfff00562ad0194aaa076f1dd839ba845a5a4bc0b0",
+    "assets/singles/takanashi-picco-song-023-v1.png": "a408c0bdf5ed991df6b6e96f28f16e33997ab2a7f0d61cfe9119b04c437665c3"
   }
 }
+
