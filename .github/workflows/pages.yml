@@ -2,7 +2,7 @@ name: Publish Uropedia
 on:
   push:
     branches: [main]
-    paths: ['site-part-07.zip', 'brand-overlay-v1.zip', 'brand-layout-v2.css', 'recorded-songs-v1/**', '.github/workflows/pages.yml']
+    paths: ['site-part-07.zip', 'brand-overlay-v1.zip', 'brand-layout-v2.css', 'recorded-songs-v1/**', 'cover-upgrades-v1/**', '.github/workflows/pages.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -49,7 +49,7 @@ jobs:
               page.write_text(page.read_text().replace('brand-v1.css"', 'brand-v1.css?v=2"'))
           import shutil
           updates = Path('recorded-songs-v1')
-          import json
+          import json, re, struct
           manifest = json.loads((updates / 'sync-manifest.json').read_text(encoding='utf-8'))
           assert manifest['schema'] == 'uropedia-live-sync-v1'
           assert len(list(updates.rglob('*.html'))) == len(manifest['songs'])
@@ -70,6 +70,44 @@ jobs:
                   assert dest.resolve().is_relative_to(target)
                   dest.parent.mkdir(parents=True, exist_ok=True)
                   shutil.copy2(item, dest)
+          for rel, digest in manifest['files'].items():
+              assert hashlib.sha256((target / rel).read_bytes()).hexdigest() == digest, rel
+          covers = Path('cover-upgrades-v1')
+          upgrades = json.loads((covers / 'manifest.json').read_text(encoding='utf-8'))
+          figure_pattern = re.compile(r'<figure class="single-cover">.*?</figure>', re.S)
+          png_header = b'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR'
+          def dimensions(data):
+              assert data[:16] == png_header
+              return struct.unpack('>II', data[16:24])
+          for song in manifest['songs']:
+              sid = song['songId']
+              assert re.fullmatch(r'[a-z0-9-]+', sid)
+              assert song['page'] == f'songs/{sid}.html'
+              assert song['asset'] == f'assets/singles/{sid}-v1.png'
+              page = target / song['page']
+              asset = target / song['asset']
+              html = page.read_text(encoding='utf-8')
+              figs = figure_pattern.findall(html)
+              assert len(figs) == 1, sid
+              fig = figs[0]
+              data = asset.read_bytes()
+              if dimensions(data) != (1024, 1024):
+                  upgrade = upgrades.get(sid)
+                  assert upgrade, f'Missing 1024 px cover for {sid}'
+                  assert hashlib.sha256(data).hexdigest() == upgrade['baseAssetSha256'], sid
+                  assert hashlib.sha256(fig.encode()).hexdigest() == upgrade['baseFigureSha256'], sid
+                  data = (covers / f'{sid}.png').read_bytes()
+                  assert hashlib.sha256(data).hexdigest() == upgrade['assetSha256'], sid
+                  assert dimensions(data) == (1024, 1024), sid
+                  fig = upgrade['figure']
+                  assert figure_pattern.fullmatch(fig), sid
+                  page.write_text(figure_pattern.sub(lambda _: fig, html), encoding='utf-8')
+                  asset.write_bytes(data)
+              match = re.search(r'src="([^"]+)"', fig)
+              assert match, sid
+              cover_url = match.group(1)
+              assert re.fullmatch(re.escape('../' + song['asset']) + r'(?:\?v=[1-9][0-9]*)?', cover_url), sid
+              assert f'href="{cover_url}"' in fig and 'width="1024" height="1024"' in fig, sid
           profile = target / 'people/umami.html'
           html = profile.read_text(encoding='utf-8')
           heading = '<section id="racing"><h2>競馬への向き合い方</h2>'
@@ -85,8 +123,6 @@ jobs:
               profile.write_text(html.replace(x_link, x_link + note, 1), encoding='utf-8')
           assert (target / 'index.html').is_file()
           assert len(list(target.rglob('*.html'))) == 849
-          for rel, digest in manifest['files'].items():
-              assert hashlib.sha256((target / rel).read_bytes()).hexdigest() == digest, rel
           PY
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
