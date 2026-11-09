@@ -2,7 +2,7 @@ name: Publish Uropedia
 on:
   push:
     branches: [main]
-    paths: ['site-part-07.zip', 'brand-overlay-v1.zip', 'brand-layout-v2.css', 'recorded-songs-v1/**', 'cover-upgrades-v1/**', '.github/workflows/pages.yml']
+    paths: ['site-part-07.zip', 'brand-overlay-v1.zip', 'brand-layout-v2.css', 'recorded-songs-v1/**', 'cover-upgrades-v1/**', 'bankohan-captions/**', '.github/workflows/pages.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -123,6 +123,14 @@ jobs:
               profile.write_text(html.replace(x_link, x_link + note, 1), encoding='utf-8')
           assert (target / 'index.html').is_file()
           assert len(list(target.rglob('*.html'))) == 849
+          oauth_docs = Path('bankohan-captions')
+          assert {p.name for p in oauth_docs.iterdir()} == {'index.html', 'privacy.html'}
+          docs_dest = target / 'bankohan-captions'
+          assert not docs_dest.exists()
+          docs_dest.mkdir()
+          for name in ('index.html', 'privacy.html'):
+              shutil.copyfile(oauth_docs / name, docs_dest / name)
+          assert len(list(target.rglob('*.html'))) == 851
           PY
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
