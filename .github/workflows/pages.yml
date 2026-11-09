@@ -52,6 +52,29 @@ jobs:
           import json, re, struct
           manifest = json.loads((updates / 'sync-manifest.json').read_text(encoding='utf-8'))
           assert manifest['schema'] == 'uropedia-live-sync-v1'
+          deferred_path = updates / 'watch-links-deferred.json'
+          if deferred_path.is_file():
+              deferred = json.loads(deferred_path.read_text(encoding='utf-8'))
+              assert deferred['schema'] == 'uropedia-deferred-watch-links-v1'
+              known = {song['songId'] for song in manifest['songs']}
+              deferred_ids = set()
+              deferred_files = set()
+              for song in deferred['songs']:
+                  assert set(song) == {'songId', 'page', 'asset', 'coverSize', 'coverRevision', 'watchLink'}
+                  sid = song['songId']
+                  assert re.fullmatch(r'[a-z0-9-]+', sid) and sid not in deferred_ids
+                  deferred_ids.add(sid)
+                  assert song['watchLink'] == 'after-publication'
+                  assert song['page'] == f'songs/{sid}.html'
+                  assert song['asset'] == f'assets/singles/{sid}-v1.png'
+                  paths = (song['page'], song['asset'])
+                  deferred_files.update(paths)
+                  if sid not in known:
+                      manifest['songs'].append(song)
+                      for rel in paths:
+                          assert rel not in manifest['files'], rel
+                          manifest['files'][rel] = deferred['files'][rel]
+              assert set(deferred['files']) == deferred_files
           assert len(list(updates.rglob('*.html'))) == len(manifest['songs'])
           assert len({song['songId'] for song in manifest['songs']}) == len(manifest['songs'])
           for rel, digest in manifest['files'].items():
@@ -60,7 +83,11 @@ jobs:
               assert hashlib.sha256(source.read_bytes()).hexdigest() == digest, rel
           for song in manifest['songs']:
               html = (updates / song['page']).read_text(encoding='utf-8')
-              assert song['youtubeUrl'] in html
+              if song.get('watchLink') == 'after-publication':
+                  assert '動画公開後に、ここに視聴リンクを掲載します。' in html
+                  assert not re.search(r'https?://(?:www\.)?(?:youtube\.com|youtu\.be)/', html)
+              else:
+                  assert song['youtubeUrl'] in html
               assert song['asset'] in html
               assert 'id="episodes"' in html and 'id="interpretation"' in html
               assert song['page'] in manifest['files'] and song['asset'] in manifest['files']

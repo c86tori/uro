@@ -1,0 +1,17 @@
+{
+  "schema": "uropedia-deferred-watch-links-v1",
+  "songs": [
+    {
+      "songId": "honey-pot-song-004",
+      "page": "songs/honey-pot-song-004.html",
+      "asset": "assets/singles/honey-pot-song-004-v1.png",
+      "coverSize": 1024,
+      "coverRevision": 1,
+      "watchLink": "after-publication"
+    }
+  ],
+  "files": {
+    "songs/honey-pot-song-004.html": "9a519f16d16096887b180bfc1b74d380c707deda6bd2b26fd34c32831ddec0a8",
+    "assets/singles/honey-pot-song-004-v1.png": "1755e346edd2a1b438607473c8c65166e894e3ca1527401cc29681895175a1e7"
+  }
+}
