@@ -88,6 +88,16 @@
       "asset": "assets/singles/marume-haruko-song-015-v1.png",
       "visibility": "private",
       "scheduledAt": null
+    },
+    {
+      "songId": "automatic-garden-song-029",
+      "youtubeUrl": "https://www.youtube.com/watch?v=-P61bQkOa6Q",
+      "page": "songs/automatic-garden-song-029.html",
+      "asset": "assets/singles/automatic-garden-song-029-v1.png",
+      "coverSize": 1024,
+      "coverRevision": 1,
+      "visibility": "private",
+      "scheduledAt": null
     }
   ],
   "files": {
@@ -113,6 +123,8 @@
     "assets/singles/yogisha-shinobu-song-015-v1.png": "fba8bca1e661412a6ba40431bde57e2b8c49cbcea5fdae3eba4f1b28fe5b4c8a",
     "songs/marume-haruko-song-015.html": "19f5030347f598180208225d15aab90e5ef23860e3daa9913718ddbd21aea868",
     "assets/singles/marume-haruko-song-015-v1.png": "67e34dc820375a73fd690fb240cba4ea1ff85e9a52d786de99fc135a5ee1aac6",
-    "assets/recorded-songs-v1.css": "86040f41eecd120d9b30542c3fbd1ddb77cb49ad04db60aef3768959341e98ea"
+    "assets/recorded-songs-v1.css": "86040f41eecd120d9b30542c3fbd1ddb77cb49ad04db60aef3768959341e98ea",
+    "songs/automatic-garden-song-029.html": "92c58ed72b26b9794320e0fff704c3e4a653e3dbe8e42c38b6632650507fba5d",
+    "assets/singles/automatic-garden-song-029-v1.png": "9815787df73e3f1cdf74eb3262ddc4d75f4f13387f68dd6040a401e2d4105e02"
   }
 }
