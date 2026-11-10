@@ -16,12 +16,22 @@
       "coverSize": 1024,
       "coverRevision": 2,
       "watchLink": "after-publication"
+    },
+    {
+      "songId": "dobashi-tsuzuku-song-001",
+      "page": "songs/dobashi-tsuzuku-song-001.html",
+      "asset": "assets/singles/dobashi-tsuzuku-song-001-v1.png",
+      "coverSize": 1024,
+      "coverRevision": 1,
+      "watchLink": "after-publication"
     }
   ],
   "files": {
     "songs/honey-pot-song-004.html": "9a519f16d16096887b180bfc1b74d380c707deda6bd2b26fd34c32831ddec0a8",
     "assets/singles/honey-pot-song-004-v1.png": "1755e346edd2a1b438607473c8c65166e894e3ca1527401cc29681895175a1e7",
     "songs/takanashi-picco-song-023.html": "850791ffea94148b819d85cde0af7b607014fedad6382cd2ab5184e5ab0e21b8",
-    "assets/singles/takanashi-picco-song-023-v1.png": "4692a0665f350d8604977f61865f61a7b6d2b1534b9fac87d8ffc0427531ed7e"
+    "assets/singles/takanashi-picco-song-023-v1.png": "4692a0665f350d8604977f61865f61a7b6d2b1534b9fac87d8ffc0427531ed7e",
+    "songs/dobashi-tsuzuku-song-001.html": "32ff41b954029418f6aa24c62ceeb1526b94596006bf47cd26ac0882163a0d36",
+    "assets/singles/dobashi-tsuzuku-song-001-v1.png": "943809719787a3598ad7acb302b256efb1a0532718152ca1a98021996a60ca67"
   }
 }
