@@ -158,6 +158,16 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=qqxbn4icdx4",
       "visibility": "private",
       "scheduledAt": null
+    },
+    {
+      "songId": "yogisha-shinobu-song-001",
+      "page": "songs/yogisha-shinobu-song-001.html",
+      "asset": "assets/singles/yogisha-shinobu-song-001-v1.png",
+      "coverSize": 1024,
+      "coverRevision": 1,
+      "youtubeUrl": "https://www.youtube.com/watch?v=Iikh_CkstYA",
+      "visibility": "private",
+      "scheduledAt": null
     }
   ],
   "files": {
@@ -197,6 +207,8 @@
     "songs/velvet-yokocho-song-013.html": "9ff3760af2c59ba81cf5e9803be5ea2ddc6b34261099e4134869133d0bf9ff64",
     "assets/singles/velvet-yokocho-song-013-v1.png": "a8125cb423e915e487d7aa43fb628d58385c5460e2b8f4872727cf5a67584496",
     "songs/dobashi-tsuzuku-song-001.html": "55cade7b488b5bb85b5df478d0044662ead59edd47fc01de60b02431efc0c1f7",
-    "assets/singles/dobashi-tsuzuku-song-001-v1.png": "943809719787a3598ad7acb302b256efb1a0532718152ca1a98021996a60ca67"
+    "assets/singles/dobashi-tsuzuku-song-001-v1.png": "943809719787a3598ad7acb302b256efb1a0532718152ca1a98021996a60ca67",
+    "songs/yogisha-shinobu-song-001.html": "1547735fd87a8e0122a816b3f818e1a5160c5b9e7750df93d43c4dcf843eddf2",
+    "assets/singles/yogisha-shinobu-song-001-v1.png": "a247b832e803add3e1c4e10cc5b124433afc797a7a46b2805aa68a61bb50d3a4"
   }
 }
