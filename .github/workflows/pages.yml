@@ -2,7 +2,7 @@ name: Publish Uropedia
 on:
   push:
     branches: [main]
-    paths: ['site-part-07.zip', 'brand-overlay-v1.zip', 'brand-layout-v2.css', 'recorded-songs-v1/**', 'cover-upgrades-v1/**', 'bankohan-captions/**', '.github/workflows/pages.yml']
+    paths: ['site-part-07.zip', 'brand-overlay-v1.zip', 'brand-layout-v2.css', 'recorded-songs-v1/**', 'cover-upgrades-v1/**', 'bankohan-captions/**', 'song-release-dates-v1.json', '.github/workflows/pages.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -135,6 +135,25 @@ jobs:
               cover_url = match.group(1)
               assert re.fullmatch(re.escape('../' + song['asset']) + r'(?:\?v=[1-9][0-9]*)?', cover_url), sid
               assert f'href="{cover_url}"' in fig and 'width="1024" height="1024"' in fig, sid
+          from datetime import datetime
+          release_dates = json.loads(Path('song-release-dates-v1.json').read_text(encoding='utf-8'))
+          assert set(release_dates) == {'schema', 'scheduledAt'}
+          assert release_dates['schema'] == 'uropedia-song-release-dates-v1'
+          by_id = {song['songId']: song for song in manifest['songs']}
+          unscheduled = '<small class="listen-note">非公開動画・視聴には許可が必要です</small>'
+          for sid, value in release_dates['scheduledAt'].items():
+              assert re.fullmatch(r'[a-z0-9-]+', sid) and sid in by_id, sid
+              assert re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:00\+09:00', value), sid
+              scheduled = datetime.fromisoformat(value)
+              song = by_id[sid]
+              if song.get('visibility') != 'private' or song.get('scheduledAt'):
+                  continue
+              page = target / song['page']
+              html = page.read_text(encoding='utf-8')
+              assert html.count(unscheduled) == 1, sid
+              date = f'{scheduled.year}/{scheduled.month}/{scheduled.day} {scheduled:%H:%M}'
+              note = f'<small class="listen-note">{date}（日本時間）公開予定。公開までは非公開です。</small>'
+              page.write_text(html.replace(unscheduled, note, 1), encoding='utf-8')
           profile = target / 'people/umami.html'
           html = profile.read_text(encoding='utf-8')
           heading = '<section id="racing"><h2>競馬への向き合い方</h2>'
