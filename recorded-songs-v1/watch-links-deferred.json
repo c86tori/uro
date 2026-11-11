@@ -40,6 +40,14 @@
       "coverSize": 1024,
       "coverRevision": 1,
       "watchLink": "after-publication"
+    },
+    {
+      "songId": "velvet-yokocho-song-006",
+      "page": "songs/velvet-yokocho-song-006.html",
+      "asset": "assets/singles/velvet-yokocho-song-006-v1.png",
+      "coverSize": 1024,
+      "coverRevision": 1,
+      "watchLink": "after-publication"
     }
   ],
   "files": {
@@ -52,6 +60,8 @@
     "songs/velvet-yokocho-song-013.html": "c926028c64680c0ae146c087f99ccaabea607905051ca8b9e8f29c6e88328a1e",
     "assets/singles/velvet-yokocho-song-013-v1.png": "a8125cb423e915e487d7aa43fb628d58385c5460e2b8f4872727cf5a67584496",
     "songs/peacock-hotel-song-020.html": "ae90321a414a9dc65f00ac9bf7cfa24403aba863b27f4609b421465e7e97fd73",
-    "assets/singles/peacock-hotel-song-020-v1.png": "7a27cf0fedb2640f48b2a9ba44ed7b03f36ded87278403f3528f656eeee75f74"
+    "assets/singles/peacock-hotel-song-020-v1.png": "7a27cf0fedb2640f48b2a9ba44ed7b03f36ded87278403f3528f656eeee75f74",
+    "songs/velvet-yokocho-song-006.html": "ebaf9946eb2f9ec5ae4938457ae7862835d1087f93d18cad9fdc4e7e3c1c1574",
+    "assets/singles/velvet-yokocho-song-006-v1.png": "d2a60c5113e73d51600197214f7598a7779dec299e1be7456f6260bbd6b4ee3a"
   }
 }
