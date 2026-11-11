@@ -146,14 +146,19 @@ jobs:
               assert re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:00\+09:00', value), sid
               scheduled = datetime.fromisoformat(value)
               song = by_id[sid]
-              if song.get('visibility') != 'private' or song.get('scheduledAt'):
+              date = f'{scheduled.year}/{scheduled.month}/{scheduled.day} {scheduled:%H:%M}'
+              if song.get('watchLink') == 'after-publication':
+                  marker = '<small class="listen-note">動画公開後に、ここに視聴リンクを掲載します。</small>'
+                  note = f'<small class="listen-note">{date}（日本時間）公開予定。</small>' + marker
+              elif song.get('visibility') == 'private' and not song.get('scheduledAt'):
+                  marker = unscheduled
+                  note = f'<small class="listen-note">{date}（日本時間）公開予定。公開までは非公開です。</small>'
+              else:
                   continue
               page = target / song['page']
               html = page.read_text(encoding='utf-8')
-              assert html.count(unscheduled) == 1, sid
-              date = f'{scheduled.year}/{scheduled.month}/{scheduled.day} {scheduled:%H:%M}'
-              note = f'<small class="listen-note">{date}（日本時間）公開予定。公開までは非公開です。</small>'
-              page.write_text(html.replace(unscheduled, note, 1), encoding='utf-8')
+              assert html.count(marker) == 1, sid
+              page.write_text(html.replace(marker, note, 1), encoding='utf-8')
           profile = target / 'people/umami.html'
           html = profile.read_text(encoding='utf-8')
           heading = '<section id="racing"><h2>競馬への向き合い方</h2>'
