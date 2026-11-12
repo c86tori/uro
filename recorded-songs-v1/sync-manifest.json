@@ -194,8 +194,8 @@
       "page": "songs/triangle-club-song-002.html",
       "asset": "assets/singles/triangle-club-song-002-v1.png",
       "coverSize": 1024,
-      "coverRevision": 1,
-      "youtubeUrl": "https://www.youtube.com/watch?v=IfulSDigrRc",
+      "coverRevision": 2,
+      "youtubeUrl": "https://www.youtube.com/watch?v=UidNeYYbuSw",
       "visibility": "private",
       "scheduledAt": null
     }
@@ -244,7 +244,7 @@
     "assets/singles/hatoba-hisui-song-013-v1.png": "9eeb6dc41bfc486e145a40a88eb3a28d45878cefb20c1b16b7757eaf1712ce60",
     "songs/hanamiya-ramune-song-022.html": "13df51db51b3f545a39788250f3778009afd31ef60bce8ea83a21de1d56931fe",
     "assets/singles/hanamiya-ramune-song-022-v1.png": "c9dc4ccff772927667adeda204247e2aa57584ffa212f6575a6536d7f083ce6e",
-    "songs/triangle-club-song-002.html": "25086d6d00464d02b0c8081fa7730f954be124fb6ce4964f6c11b01152ea66de",
-    "assets/singles/triangle-club-song-002-v1.png": "65deaba7dabf28eb43d952c12ba8031dd5f6ae8d498621798bd5cec1fe329d68"
+    "songs/triangle-club-song-002.html": "1efde8f69162a453b3f15d4d06f05112af6c813b2249b4d20b9d34967d48b5a1",
+    "assets/singles/triangle-club-song-002-v1.png": "cbcaa358056134d5595fbc6308d093b15978bf037f6bc6d21e0836939229d71b"
   }
 }
