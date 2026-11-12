@@ -178,6 +178,26 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=S5vUY27Zuuc",
       "visibility": "private",
       "scheduledAt": "2026-11-26T00:37:00+09:00"
+    },
+    {
+      "songId": "hanamiya-ramune-song-022",
+      "page": "songs/hanamiya-ramune-song-022.html",
+      "asset": "assets/singles/hanamiya-ramune-song-022-v1.png",
+      "coverSize": 1024,
+      "coverRevision": 1,
+      "youtubeUrl": "https://www.youtube.com/watch?v=vMD8YHq1nWY",
+      "visibility": "private",
+      "scheduledAt": null
+    },
+    {
+      "songId": "triangle-club-song-002",
+      "page": "songs/triangle-club-song-002.html",
+      "asset": "assets/singles/triangle-club-song-002-v1.png",
+      "coverSize": 1024,
+      "coverRevision": 1,
+      "youtubeUrl": "https://www.youtube.com/watch?v=WLXfVucc-IA",
+      "visibility": "private",
+      "scheduledAt": null
     }
   ],
   "files": {
@@ -221,6 +241,10 @@
     "songs/yogisha-shinobu-song-001.html": "21c5e1c1336b27f88d98347cec01bea40dc4eefc023a4f13182126d5dac8796b",
     "assets/singles/yogisha-shinobu-song-001-v1.png": "a247b832e803add3e1c4e10cc5b124433afc797a7a46b2805aa68a61bb50d3a4",
     "songs/hatoba-hisui-song-013.html": "66fd4c403b23541fc099043d1ef244d7e1af549d029bdba17fa277ce963e88aa",
-    "assets/singles/hatoba-hisui-song-013-v1.png": "9eeb6dc41bfc486e145a40a88eb3a28d45878cefb20c1b16b7757eaf1712ce60"
+    "assets/singles/hatoba-hisui-song-013-v1.png": "9eeb6dc41bfc486e145a40a88eb3a28d45878cefb20c1b16b7757eaf1712ce60",
+    "songs/hanamiya-ramune-song-022.html": "6c1a192bdafb1cc395cd957a246cd767e4a20e3435ab7692f34a14b2a45599bb",
+    "assets/singles/hanamiya-ramune-song-022-v1.png": "c9dc4ccff772927667adeda204247e2aa57584ffa212f6575a6536d7f083ce6e",
+    "songs/triangle-club-song-002.html": "1aaa453542a52fac7e9cbefc89090b93db312e73a7e127e6bf3a7699a4582a3e",
+    "assets/singles/triangle-club-song-002-v1.png": "65deaba7dabf28eb43d952c12ba8031dd5f6ae8d498621798bd5cec1fe329d68"
   }
 }
