@@ -198,6 +198,16 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=UidNeYYbuSw",
       "visibility": "private",
       "scheduledAt": null
+    },
+    {
+      "songId": "yoimachi-shoko-song-010",
+      "page": "songs/yoimachi-shoko-song-010.html",
+      "asset": "assets/singles/yoimachi-shoko-song-010-v1.png",
+      "coverSize": 1024,
+      "coverRevision": 1,
+      "youtubeUrl": "https://www.youtube.com/watch?v=S7H79rLKPtg",
+      "visibility": "private",
+      "scheduledAt": null
     }
   ],
   "files": {
@@ -245,6 +255,8 @@
     "songs/hanamiya-ramune-song-022.html": "13df51db51b3f545a39788250f3778009afd31ef60bce8ea83a21de1d56931fe",
     "assets/singles/hanamiya-ramune-song-022-v1.png": "c9dc4ccff772927667adeda204247e2aa57584ffa212f6575a6536d7f083ce6e",
     "songs/triangle-club-song-002.html": "1efde8f69162a453b3f15d4d06f05112af6c813b2249b4d20b9d34967d48b5a1",
-    "assets/singles/triangle-club-song-002-v1.png": "cbcaa358056134d5595fbc6308d093b15978bf037f6bc6d21e0836939229d71b"
+    "assets/singles/triangle-club-song-002-v1.png": "cbcaa358056134d5595fbc6308d093b15978bf037f6bc6d21e0836939229d71b",
+    "songs/yoimachi-shoko-song-010.html": "ea84fb57a7d41331aa9d507fa9c40485f601d07406b10cc4cf1b7cb1f61d809e",
+    "assets/singles/yoimachi-shoko-song-010-v1.png": "c0805c805ea5887e539935e23e962db84f7e3424f894f41fe2ee0557b86ddbc4"
   }
 }
