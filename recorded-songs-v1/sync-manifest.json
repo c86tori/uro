@@ -208,6 +208,16 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=S7H79rLKPtg",
       "visibility": "private",
       "scheduledAt": null
+    },
+    {
+      "songId": "marume-haruko-song-004",
+      "page": "songs/marume-haruko-song-004.html",
+      "asset": "assets/singles/marume-haruko-song-004-v1.png",
+      "coverSize": 1024,
+      "coverRevision": 1,
+      "youtubeUrl": "https://www.youtube.com/watch?v=eCAqllkgF84",
+      "visibility": "private",
+      "scheduledAt": null
     }
   ],
   "files": {
@@ -257,6 +267,8 @@
     "songs/triangle-club-song-002.html": "1efde8f69162a453b3f15d4d06f05112af6c813b2249b4d20b9d34967d48b5a1",
     "assets/singles/triangle-club-song-002-v1.png": "cbcaa358056134d5595fbc6308d093b15978bf037f6bc6d21e0836939229d71b",
     "songs/yoimachi-shoko-song-010.html": "ea84fb57a7d41331aa9d507fa9c40485f601d07406b10cc4cf1b7cb1f61d809e",
-    "assets/singles/yoimachi-shoko-song-010-v1.png": "c0805c805ea5887e539935e23e962db84f7e3424f894f41fe2ee0557b86ddbc4"
+    "assets/singles/yoimachi-shoko-song-010-v1.png": "c0805c805ea5887e539935e23e962db84f7e3424f894f41fe2ee0557b86ddbc4",
+    "songs/marume-haruko-song-004.html": "ea2d97ed9e020afa4191bfea098e3cd8c05d3d59cbaf6402a94b87a3a6902be9",
+    "assets/singles/marume-haruko-song-004-v1.png": "01be8577a1162a6eb9ad8675ea3acbc7d31fd3d241554e354802d8f5a4b9252a"
   }
 }
